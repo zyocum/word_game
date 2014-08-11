@@ -22,7 +22,9 @@ vowels = 'aeiou'
 # Functions
 ################################################################################
 def skeletons(word):
-    """Given a word, this function returns a list of word skeleton strings such that each individual vowel character in the word is replaced with an underscore.
+    """Given a word, this function returns a list of word skeleton strings such
+that each individual vowel character in the word is replaced with an
+underscore.
     E.g., skeletons('skeleton') -> ['sk_leton', 'skel_ton', 'skelet_n']"""
     # Replace the vowel at index i with an underscore in the word
     skeletonize = lambda i : word[:i] + '_' + word[i+1:]
@@ -31,7 +33,10 @@ def skeletons(word):
     return (skeletonize(i) for i, c in enumerate(word) if is_vowel(c))
 
 def print_solutions(words):
-    """This is the main function that runs the nested loops necessary to find solutions to the game and print them as they are discovered. The dictionary is keyed on word skeletons and the values are lists of words that can be constructed by filling in the underscore in the key with a vowel.
+    """This is the main function that runs the nested loops necessary to find
+solutions to the game and print them as they are discovered. The dictionary is
+keyed on word skeletons and the values are lists of words that can be
+constructed by filling in the underscore in the key with a vowel.
     I.e., {'b_'     : set(['ba', 'be', 'bi', 'bo']),
            ...
            'b_efy'  : set(['beefy']),
