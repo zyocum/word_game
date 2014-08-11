@@ -46,7 +46,7 @@ constructed by filling in the underscore in the key with a vowel.
     dictionary = {}
     # Iterate over all words
     for word in words:
-        # Iterate over word skeletons as dictionary keys
+        # Iterate over word skeletons (to use as dictionary keys)
         for key in skeletons(word):
             # Iterate over all vowels
             for vowel in vowels:
@@ -58,7 +58,7 @@ constructed by filling in the underscore in the key with a vowel.
                         dictionary[key].add(word)
                         # Test if a solution has been found and print it if so
                         if len(dictionary[key]) == len(vowels):
-                            print ', '.join(sorted(dictionary[key]))
+                            print(', '.join(sorted(dictionary[key])))
                     # If the key doesn't yet exist, create the key-value pair
                     else:
                         dictionary[key] = set([word])
