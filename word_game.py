@@ -14,10 +14,12 @@ replace the underscore in the skeleton 'l_st' to form a word."""
 
 import os
 
-vowels = 'aeiou' # Exclude 'y' since it can't make up its mind if it's a vowel
+# Exclude 'y' from vowels since it can't make up its mind if it's a vowel or not
+vowels = 'aeiou'
+# Open and parse the words file to create the words list
 with open(os.path.join(os.getcwd(), 'words.txt'), 'r') as words_file:
     words = words_file.read().strip().split('\n')
-# This file is unecessary once the words list is in memory
+# The file is unecessary once the words list is in memory
 words_file.close()
 del words_file
 
