@@ -39,15 +39,15 @@ def print_solutions(words):
 solutions to the game and print them as they are discovered. The dictionary is
 keyed on word skeletons and the values are sets of words that can be
 constructed by filling in the underscore in the key with a vowel.
-    I.e., {'b_'     : set(['ba', 'be', 'bi', 'bo']),
+    I.e., {'Eb_uche' : set(['Ebauche']),
            ...
-           'b_efy'  : set(['beefy']),
+           '_dult'   : set(['adult']),
            ...
-           'h_ll'   : set(['hall', 'hell', 'hill', 'hull']),
+           'h_ll'    : set(['hall', 'hell', 'hill', 'hull']),
            ...
-           'l_st'   : set(['last', 'lest', 'list', 'lost', 'lust']),
+           'l_st'    : set(['last', 'lest', 'list', 'lost', 'lust']),
            ...
-           'zyth_m' : set(['zythum'])}"""
+           'zyth_m'  : set(['zythum'])}"""
     dictionary = {}
     # Iterate over all words
     for word in words:
@@ -67,6 +67,5 @@ constructed by filling in the underscore in the key with a vowel.
                     # If the key doesn't yet exist, create the key-value pair
                     else:
                         dictionary[key] = set([word])
-
 if __name__ == '__main__':
     print_solutions(words)
