@@ -22,10 +22,13 @@ words_file.close()
 del words_file
 
 def skeletons(word):
-    """Given a word, this function returns a generator of word skeleton strings
-such that each individual vowel character in the word is replaced with an
+    """Given a word, this function returns a generator of skeleton strings such
+that each individual vowel character in the word is replaced with an
 underscore.
-E.g., skeletons('skeleton') -> ['sk_leton', 'skel_ton', 'skelet_n']"""
+
+E.g.:
+    
+    skeletons('skeleton') -> ['sk_leton', 'skel_ton', 'skelet_n']"""
     # Replace the vowel at index i with an underscore in the word
     skeletonize = lambda i : word[:i] + '_' + word[i+1:]
     # Test whether the character c is a vowel
@@ -56,16 +59,13 @@ I.e., when the iteration over the words is completed:
     for word in words:
         # Iterate over word skeletons (to use as dictionary keys)
         for key in skeletons(word):
-            # Test if the key already exists
-            if not dictionary.get(key):
-                # If not, add the key-value pair
-                dictionary[key] = set([word])
-            else:
-                # If so, add the word to the candidate solution set
-                dictionary[key].add(word)
-                # Test if a solution is found, and if so print it
-                if len(dictionary[key]) == len(vowels):
-                    print(', '.join(sorted(dictionary[key])))
+            # Populate the skeletons as keys, and empty sets as initial values
+            dictionary.setdefault(key, set())
+            # Add the word to the candidate solution set for each key
+            dictionary[key].add(word)
+            # Test if a solution set has been found, and print it if so
+            if len(dictionary[key]) == len(vowels):
+                print(', '.join(sorted(dictionary[key])))
 
 if __name__ == '__main__':
     print_solutions(words)
