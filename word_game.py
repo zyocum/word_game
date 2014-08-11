@@ -16,12 +16,11 @@ replace the underscore in the skeleton 'l_st' to form a word.
 
 import os
 
-vowels = 'aeiou' # exclude 'y' since it can't make up its mind if it's a vowel
+vowels = 'aeiou' # Exclude 'y' since it can't make up its mind if it's a vowel
 with open(os.path.join(os.getcwd(), 'words.txt'), 'r') as words_file:
     words = words_file.read().strip().split('\n')
     words_file.close()
-# Once the list of words is in memory, we don't need this data anymore
-del words_file
+del words_file # We don't need this file once the words list is in memory
 
 def skeletons(word):
     """Given a word, this function returns a generator of word skeleton strings
@@ -63,5 +62,6 @@ constructed by filling in the underscore in the key with a vowel.
                 # Test if a solution is found, and if so print it
                 if len(dictionary[key]) == len(vowels):
                     print(', '.join(sorted(dictionary[key])))
+
 if __name__ == '__main__':
     print_solutions(words)
