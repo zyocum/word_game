@@ -10,9 +10,6 @@ import os
 # set of words set(['last', 'lest', 'list', 'lost', 'lust']), since the vowels 
 # 'a', 'e', 'i', 'o', and 'u' occur in the same positions between the consonant 
 # clusters 'l' and 'st'.
-# The algorithm implemented in this program will run in O((n^v)^|V|) time 
-# complexity where n is the number of words to test against, v is the number of 
-# vowels in the nth word and V is the set of vowels.
 ################################################################################
 # Data
 # Letters that are vowels
