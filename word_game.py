@@ -53,19 +53,15 @@ constructed by filling in the underscore in the key with a vowel.
     for word in words:
         # Iterate over word skeletons (to use as dictionary keys)
         for key in skeletons(word):
-            # Iterate over all vowels
-            for vowel in vowels:
-                # Test whether filling in a vowel in the skeleton forms a word
-                if key.replace('_', vowel) == word:
-                    # Test if the skeleton key exists yet
-                    if dictionary.get(key):
-                        # Add the word to the value set
-                        dictionary[key].add(word)
-                        # Test if a solution has been found and print it if so
-                        if len(dictionary[key]) == len(vowels):
-                            print(', '.join(sorted(dictionary[key])))
-                    # If the key doesn't yet exist, create the key-value pair
-                    else:
-                        dictionary[key] = set([word])
+            # Test if the key already exists
+            if not dictionary.get(key):
+                # If not, add the key-value pair
+                dictionary[key] = set([word])
+            else:
+                # If so, add the word to the candidate solution set
+                dictionary[key].add(word)
+                # Test if a solution is found, and if so print it
+                if len(dictionary[key]) == len(vowels):
+                    print(', '.join(sorted(dictionary[key])))
 if __name__ == '__main__':
     print_solutions(words)
