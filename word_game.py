@@ -57,7 +57,7 @@ constructed by filling in the underscore in the key with a vowel.
                 if key.replace('_', vowel) == word:
                     # Test if the skeleton key exists yet
                     if dictionary.get(key):
-                        # Append the word to the value set
+                        # Add the word to the value set
                         dictionary[key].add(word)
                         # Test if a solution has been found and print it if so
                         if len(dictionary[key]) == len(vowels):
