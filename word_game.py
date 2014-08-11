@@ -1,8 +1,7 @@
 __author__ = "Zachary Yocum"
 __email__  = "zyocum@brandeis.edu"
 
-"""
-This program performs a search for solutions to a word game and prints them.
+"""This program performs a search for solutions to a word game and prints them.
 
 The goal of the game is to find sets of five words that share an interchangeable vowel position.
 
@@ -11,8 +10,7 @@ E.g., one solution to the game would be the set:
     set(['last', 'lest', 'list', 'lost', 'lust'])
 
 This is a valid solution since the vowels 'a', 'e', 'i', 'o', and 'u' can each 
-replace the underscore in the skeleton 'l_st' to form a word.
-"""
+replace the underscore in the skeleton 'l_st' to form a word."""
 
 import os
 
@@ -39,15 +37,20 @@ def print_solutions(words):
 solutions to the game and print them as they are discovered. The dictionary is
 keyed on word skeletons and the values are sets of words that can be
 constructed by filling in the underscore in the key with a vowel.
-    I.e., {'Eb_uche' : set(['Ebauche']),
-           ...
-           '_dult'   : set(['adult']),
-           ...
-           'h_ll'    : set(['hall', 'hell', 'hill', 'hull']),
-           ...
-           'l_st'    : set(['last', 'lest', 'list', 'lost', 'lust']),
-           ...
-           'zyth_m'  : set(['zythum'])}"""
+
+I.e., when the iteration over the words is completed:
+
+    dictionary = {
+        'Eb_uche' : set(['Ebauche']),
+        ...
+        '_dult'   : set(['adult']),
+        ...
+        'h_ll'    : set(['hall', 'hell', 'hill', 'hull']),
+        ...
+        'l_st'    : set(['last', 'lest', 'list', 'lost', 'lust']),
+        ...
+        'zyth_m'  : set(['zythum'])
+    }"""
     dictionary = {}
     # Iterate over all words
     for word in words:
