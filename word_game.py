@@ -3,7 +3,6 @@ __author__ = "Zachary Yocum"
 __email__  = "zyocum@brandeis.edu"
 ################################################################################
 import os
-from string import ascii_lowercase as alphabet
 ################################################################################
 # This program performs a search for solutions to a word game and prints them.
 # The goal of the game is to find sets of five words that share an 
