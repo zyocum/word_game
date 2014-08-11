@@ -19,8 +19,8 @@ vowels = 'aeiou'
 # Functions
 ################################################################################
 def skeletons(word):
-    """Given a word, this function returns a list of word skeleton strings such
-that each individual vowel character in the word is replaced with an
+    """Given a word, this function returns a generator of word skeleton strings
+such that each individual vowel character in the word is replaced with an
 underscore.
     E.g., skeletons('skeleton') -> ['sk_leton', 'skel_ton', 'skelet_n']"""
     # Replace the vowel at index i with an underscore in the word
