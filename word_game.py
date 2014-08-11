@@ -19,8 +19,9 @@ import os
 vowels = 'aeiou' # Exclude 'y' since it can't make up its mind if it's a vowel
 with open(os.path.join(os.getcwd(), 'words.txt'), 'r') as words_file:
     words = words_file.read().strip().split('\n')
-    words_file.close()
-del words_file # We don't need this file once the words list is in memory
+# This file is unecessary once the words list is in memory
+words_file.close()
+del words_file
 
 def skeletons(word):
     """Given a word, this function returns a generator of word skeleton strings
