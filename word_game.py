@@ -54,7 +54,5 @@ if __name__ == '__main__':
     # Open and parse the words file to create the words list
     with open('words.txt', 'r') as words_file:
         words = words_file.read().strip().split('\n')
-    # The file is unecessary once the words list is in memory
-    del words_file
     # Search the words list for solutions and print them
     print_solutions(words)
