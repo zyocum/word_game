@@ -49,7 +49,6 @@ def print_solutions(words):
                 print(', '.join(sorted(dictionary[skeleton])))
 
 if __name__ == '__main__':
-    import os
     # Exclude 'y' from vowels since it can't make up its mind if it's a vowel
     vowels = 'aeiou'
     # Open and parse the words file to create the words list
