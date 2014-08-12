@@ -50,7 +50,7 @@ def print_solutions(words):
 
 if __name__ == '__main__':
     import os
-    # Exclude 'y' from vowels since it can't make up its mind if it's a vowel or not
+    # Exclude 'y' from vowels since it can't make up its mind if it's a vowelx
     vowels = 'aeiou'
     # Open and parse the words file to create the words list
     with open('words.txt', 'r') as words_file:
