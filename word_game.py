@@ -54,6 +54,6 @@ def print_solutions(words):
 if __name__ == '__main__':
     # Open and parse the words file to create the words list
     with open('words.txt', 'r') as words_file:
-        words = words_file.read().strip().split('\n')
+        words = words_file.read().splitlines()
     # Search the words list for solutions and print them
     print_solutions(words)
