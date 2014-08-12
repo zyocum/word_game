@@ -17,6 +17,8 @@ def skeletons(word):
     """Generates all skeletons of a word by replacing vowels with underscores.
     
     E.g.: skeletons('skeleton') -> ['sk_leton', 'skel_ton', 'skelet_n']"""
+    # Exclude 'y' from vowels since it can't make up its mind if it's a vowel
+    vowels = 'aeiou'
     # Replace the vowel at index i with an underscore in the word
     skeletonize = lambda i : word[:i] + '_' + word[i+1:]
     # Test whether the character c is a vowel
@@ -49,8 +51,6 @@ def print_solutions(words):
                 print(', '.join(sorted(dictionary[skeleton])))
 
 if __name__ == '__main__':
-    # Exclude 'y' from vowels since it can't make up its mind if it's a vowel
-    vowels = 'aeiou'
     # Open and parse the words file to create the words list
     with open('words.txt', 'r') as words_file:
         words = words_file.read().strip().split('\n')
