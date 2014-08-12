@@ -34,7 +34,7 @@ E.g.:
     # Replace the vowel at index i with an underscore in the word
     skeletonize = lambda i : word[:i] + '_' + word[i+1:]
     # Test whether the character c is a vowel
-    is_vowel = lambda c : c in vowels
+    is_vowel = lambda c : c.lower() in vowels
     return (skeletonize(i) for i, c in enumerate(word) if is_vowel(c))
 
 def print_solutions(words):
@@ -46,7 +46,6 @@ constructed by filling in the underscore in the key with a vowel.
 I.e., when the iteration over the words is completed:
 
     dictionary = {
-        'Eb_uche' : set(['Ebauche']),
         ...
         '_dult'   : set(['adult']),
         ...
