@@ -13,7 +13,10 @@ E.g., one solution to the game would be the set:
 This is a valid solution since the vowels 'a', 'e', 'i', 'o', and 'u' can each 
 replace the underscore in the skeleton 'l_st' to form a word."""
 
-def skeletons(word, vowels='aeiou'):
+# Exclude 'y' from vowels since it can't make up its mind if it's a vowel
+vowels = 'aeiou'
+
+def skeletons(word):
     """Generates all skeletons of a word by replacing vowels with underscores.
     
     E.g.: skeletons('skeleton') -> ['sk_leton', 'skel_ton', 'skelet_n']"""
