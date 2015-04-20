@@ -10,10 +10,10 @@ E.g., one solution to the game would be the set:
 This is a valid solution since the vowels 'a', 'e', 'i', 'o', and 'u' can each 
 replace the underscore in the skeleton 'l_st' to form a word."""
 
-from collections import defaultdict
-
 __author__ = "Zachary Yocum"
 __email__  = "zyocum@brandeis.edu"
+
+from collections import defaultdict
 
 # Exclude 'y' from vowels since it can't make up its mind if it's a vowel
 VOWELS = 'aeiou'
