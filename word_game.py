@@ -44,7 +44,10 @@ def print_solutions(words):
             if len(dictionary[skeleton]) == len(VOWELS):
                 print(', '.join(sorted(dictionary[skeleton])))
 
-if __name__ == '__main__':
-    with open('words.txt', 'r') as file:
+def main(wordsfile='words.txt'):
+    with open(wordsfile, 'r') as file:
         words = file.read().splitlines()
     print_solutions(words)
+
+if __name__ == '__main__':
+    main()
