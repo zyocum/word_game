@@ -25,8 +25,7 @@ def is_vowel(c):
 
 def skeletonize(word, i):
     """Skeletonizes a word by replacing the i-th character with a mask."""
-    left, right = word[:i], word[i+1:]
-    skeleton = MASK.join((left, right))
+    skeleton = MASK.join((word[:i], word[i+1:]))
     return skeleton
 
 def skeletons(word):
@@ -35,19 +34,20 @@ def skeletons(word):
     E.g.: skeletons('skeleton') -> ['sk_leton', 'skel_ton', 'skelet_n']"""
     return (skeletonize(word, i) for i, c in enumerate(word) if is_vowel(c))
 
-def print_solutions(words):
-    """Searches for solutions to the game and prints them as they are found."""
+def solutions(words):
+    """Search for and generate solutions to the game as they are found."""
     dictionary = defaultdict(set)
     for word in words:
         for skeleton in skeletons(word):
             dictionary[skeleton].add(word)
             if len(dictionary[skeleton]) == len(VOWELS):
-                print(', '.join(sorted(dictionary[skeleton])))
+                yield ', '.join(sorted(dictionary[skeleton]))
 
 def main(wordsfile='words.txt'):
     with open(wordsfile, 'r') as file:
         words = file.read().splitlines()
-    print_solutions(words)
+    for solution in solutions(words):
+        print solution
 
 if __name__ == '__main__':
     main()
