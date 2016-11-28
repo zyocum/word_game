@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """This program performs a search for solutions to a word game and prints them.
 
 The goal of the game is to find sets of five words that share an 
@@ -47,7 +48,7 @@ def main(wordsfile='words.txt'):
     with open(wordsfile, 'r') as file:
         words = file.read().splitlines()
     for solution in solutions(words):
-        print solution
+        print(solution)
 
 if __name__ == '__main__':
     main()
